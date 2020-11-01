@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity3">
+
+    <Button
+        android:id="@+id/btnSelectHEX"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#fed467"
+        android:text="HEX COLOR"
+        android:textFontWeight="@android:integer/config_longAnimTime"
+        android:layout_weight="0.5"
+        />
+
+    <Button
+        android:layout_weight="0.5"
+        android:id="@+id/btnSelecetRGB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/teal_700"
+        android:textFontWeight="@android:integer/config_longAnimTime"
+        android:text="RGB COLOR" />
+
+
+
+
+</LinearLayout>

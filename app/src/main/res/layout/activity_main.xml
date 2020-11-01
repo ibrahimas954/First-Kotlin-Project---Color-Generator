@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
+    android:background="#a93e54"
     android:paddingRight="16dp"
     tools:context=".MainActivity">
 
@@ -27,6 +28,8 @@
         android:layout_marginTop="425dp"
         android:layout_marginRight="40dp"
         android:text="Copy"
+        android:backgroundTint="@color/black"
+        android:enabled="true"
 
         />
     <Button

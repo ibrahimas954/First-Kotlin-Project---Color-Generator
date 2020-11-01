@@ -1,5 +1,8 @@
 package eu.example.randomhexcolorgenerator
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.graphics.Color
@@ -9,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         fun createColor() : String {
             val color_chars = ArrayList<Char>()
@@ -22,14 +26,29 @@ class MainActivity : AppCompatActivity() {
             return new_clr_str
         }
 
+        fun copyColor(value:String){
+            var clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            var clip = ClipData.newPlainText("Copy Text", value)
+            clipboard.setPrimaryClip(clip)
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btnGenerateColor.setOnClickListener {
-            // Toast.makeText(this, "Çalışıyor",Toast.LENGTH_SHORT).show()
             var randomClr = createColor()
             Toast.makeText(this, randomClr ,Toast.LENGTH_SHORT).show()
             btnShowingColor.setBackgroundColor(Color.parseColor(randomClr))
+
+            btnCopy.setOnClickListener {
+                 copyColor(randomClr)
+                 Toast.makeText(this, randomClr + " Kopyalandı " ,Toast.LENGTH_SHORT).show()
+            }
         }
+        btnCopy.setOnClickListener{
+            Toast.makeText(this, "Lütfen önce bir renk seçiniz !" ,Toast.LENGTH_SHORT).show()
+        }
+
+
 
 
     }
